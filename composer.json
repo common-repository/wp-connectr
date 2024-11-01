@@ -1,0 +1,68 @@
+{
+    "name": "reenhanced/wp-connectr",
+    "description": "Connect WordPress to Power Automate for advanced workflows.",
+    "type": "wordpress-plugin",
+    "keywords": [
+        "wordpress",
+        "power automate",
+        "power apps",
+        "microsoft",
+        "dataverse",
+        "sharepoint"
+    ],
+    "license": "GPL-2.0+",
+    "homepage": "https://reenhanced.com/products/wordpress-connector/",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.2",
+        "league/container": "^4.2.2"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+        "phpcompatibility/php-compatibility": "*",
+        "wp-coding-standards/wpcs": "*",
+        "squizlabs/php_codesniffer": "*",
+        "friendsofphp/php-cs-fixer": "^3.0"
+    },
+    "extra": {
+        "strauss": {
+            "target_directory": "vendor_prefixed",
+            "namespace_prefix": "WPConnectr",
+            "classmap_prefix": "WPConnectr_",
+            "constant_prefix": "WP_CONNECTR_",
+            "packages": [
+            ],
+            "namespace_replacement_patterns": {
+                "/^League/": "WPConnectr\\ThirdParty\\League",
+                "/^Psr/": "WPConnectr\\ThirdParty\\Psr",
+                "/^Monolog/": "WPConnectr\\ThirdParty\\Monolog"
+            },
+            "override_autoload": {
+            },
+            "exclude_from_prefix": {
+                "file_patterns": []
+            }
+        }
+    },
+    "scripts": {
+        "prefix_vendor": "@php strauss.phar",
+        "post_update_install": "./composer_post_update_install.sh",
+        "post-install-cmd": [
+            "@prefix_vendor",
+            "@post_update_install",
+            "composer dump-autoload -o"
+        ],
+        "post-update-cmd": [
+            "@prefix_vendor",
+            "@post_update_install",
+            "composer dump-autoload -o"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "kylekatarnls/update-helper": true
+        }
+    }
+}

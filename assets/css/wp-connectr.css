@@ -1,0 +1,50 @@
+.about-wrap .centered-div {
+    background-color: #f9f9f9; /* Lighter background */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the div */
+    margin: 10px auto; /* Center the div */
+    width: 80%; /* Adjust the width as needed */
+    text-align: center; /* Center the text */
+}
+
+#wp-connectr-welcome-header {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+}
+
+#wp-connectr-welcome-header img.logo {
+    width: 150px;
+    margin: 20px;
+}
+
+#wp-connectr-welcome-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 0;
+}
+
+#wp-connectr-summary {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+table.resource_abilities tbody td {
+    padding: 5px;
+    text-align: center;
+}
+
+table.resource_abilities tbody td.resc {
+    text-align: left;
+}
+
+ul.products-list li a {
+    display: flex;
+    align-items: center;
+}
+
+.products-list li a img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
